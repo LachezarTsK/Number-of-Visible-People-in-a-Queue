@@ -1,9 +1,5 @@
 
-/**
- * @param {number[]} heights
- * @return {number[]}
- */
-var canSeePersonsCount = function(heights) {
+function canSeePersonsCount(heights: number[]): number[] {
     const MAX_HEIGHT = Math.pow(10, 5);
     const countSeenPersons: number[] = new Array(heights.length);
     const monotonicStack: Person[] = new Array();
@@ -22,7 +18,7 @@ var canSeePersonsCount = function(heights) {
 
         countSeenPersons[i] = monotonicStack[monotonicStack.length - 1].index - i - peopleOutOfSightFromCurrentPosition;
         const peopleDirectlyHiddenByThisPerson = additionalPeopleOutOfSightSeenFromPositionsAtSmallerIndexes
-            + peopleOutOfSightFromCurrentPosition;
+                                                 + peopleOutOfSightFromCurrentPosition;
         monotonicStack.push(new Person(heights[i], i, peopleDirectlyHiddenByThisPerson));
     }
 
