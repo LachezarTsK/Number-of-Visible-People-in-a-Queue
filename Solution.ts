@@ -8,7 +8,7 @@ function canSeePersonsCount(heights: number[]): number[] {
 
     for (let i = heights.length - 1; i >= 0; --i) {
         let peopleOutOfSightFromCurrentPosition = 0;
-        let additionalPeopleOutOfSightSeenFromPositionsAtSmallerIndexes = 0;
+        let additionalPeopleOutOfSightSeenFromPositionsAtSmallerIndexes = 0; 
 
         while (monotonicStack.length > 0 && monotonicStack[monotonicStack.length - 1].height < heights[i]) {
             peopleOutOfSightFromCurrentPosition += monotonicStack[monotonicStack.length - 1].peopleDirectlyHiddenByThisPerson;
