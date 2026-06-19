@@ -22,7 +22,7 @@ var canSeePersonsCount = function (heights) {
 
         countSeenPersons[i] = monotonicStack[monotonicStack.length - 1].index - i - peopleOutOfSightFromCurrentPosition;
         const peopleDirectlyHiddenByThisPerson = additionalPeopleOutOfSightSeenFromPositionsAtSmallerIndexes
-                + peopleOutOfSightFromCurrentPosition;
+                                                 + peopleOutOfSightFromCurrentPosition;
         monotonicStack.push(new Person(heights[i], i, peopleDirectlyHiddenByThisPerson));
     }
 
