@@ -45,7 +45,7 @@ public class Solution {
 
             countSeenPersons[i] = monotonicStack.peekFirst().index - i - peopleOutOfSightFromCurrentPosition;
             int peopleDirectlyHiddenByThisPerson = additionalPeopleOutOfSightSeenFromPositionsAtSmallerIndexes
-                    + peopleOutOfSightFromCurrentPosition;
+                                                   + peopleOutOfSightFromCurrentPosition;
             monotonicStack.addFirst(new Person(heights[i], i, peopleDirectlyHiddenByThisPerson));
         }
 
